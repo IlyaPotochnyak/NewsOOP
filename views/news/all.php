@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
 
-    <?php foreach ($items as $item):  ?>
-      <h1>  <?php echo $item->title ; ?></h1><br>
-      <div>
-        <?php echo $item->text; ?>
-      </div>
-      <br>
-      <div>
-        <?php echo $item->date; ?>
-      </div>
 
-    <?php endforeach; ?>
+<?php foreach ($items as $item): ?>
 
-    <div class="">
-      <br>
-      <a href="/views/add.php">Добавить новость</a>
-    </div>
-    <?php echo date("d.m.Y H : i : s"); ?>
-  </body>
-</html>
+    <h3><?php echo $item->title; ?></h3>
+    <div><?php echo $item->newText; ?></div>
+
+<?php endforeach; ?>
+

@@ -1,28 +1,29 @@
 <?php
 
 /**
- *
+ * Created by PhpStorm.
+ * User: potoc
+ * Date: 16.05.2017
+ * Time: 14:40
  */
 abstract class AbstractModel
 {
 
-  protected static $table;
-  protected static $class;
+    protected static $table;
+    protected static $class;
 
-  public static function getAll()
- {
-   $db = new DB;
-   $sql = 'SELECT * FROM ' . static::$table;
-   return $db->queryAll($sql, static::$class);
- }
+    public static function getAll() {
 
- public static function getOne($id)
- {
-   $db = new DB();
-   $sql = 'SELECT * FROM news WHERE id=' . $id;
-   return $db->queryOne($sql, static::$class);
- }
+        $db = new DB;
+
+        return $db->queryAll('SELECT * FROM '. static::$table, static::$class);
+    }
+
+    public static function getOne($id)
+    {
+        $db = new DB();
+
+        return $db->queryOne('SELECT * FROM ' . static::$table . ' WHERE id='. $id, static::$class);
+    }
+
 }
-
-
- ?>

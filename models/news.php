@@ -1,22 +1,24 @@
 <?php
 
-// require_once __DIR__ . '/../classes/DB.php';
 /**
- *
+ * Created by PhpStorm.
+ * User: potoc
+ * Date: 16.05.2017
+ * Time: 11:11
  */
-class News extends AbstractModel
-{
-  public $id;
-  public $date;
-  public $u_date;
-  public $title;
-  public $text;
 
-protected static $table = 'news';
-protected static $class = 'news';
+//require_once __DIR__ . '/../classes/DB.php';
 
-  
+class News extends AbstractModel {
+
+
+    public $id;
+    public $title;
+    public $newText;
+    public $date;
+
+    protected static $table = 'news';
+    protected static $class = 'News';
+
+
 }
-
-
- ?>
