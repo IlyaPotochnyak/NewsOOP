@@ -26,4 +26,6 @@ abstract class AbstractModel
         return $db->queryOne('SELECT * FROM ' . static::$table . ' WHERE id='. $id, static::$class);
     }
 
+
+
 }

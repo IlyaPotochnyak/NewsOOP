@@ -14,8 +14,17 @@ class NewsController
     public function actionAll()
     {
 
-        $items = News::getAll();
-        include __DIR__ . '/../views/news/all.php';
+        $news = News::getAll();
+        $view = new View();
+
+
+        $view->items = $news;
+
+
+
+        $view->display('news/all.php');
+
+//        include __DIR__ . '/../views/news/all.php';
     }
 
     public function actionOne()
@@ -23,7 +32,10 @@ class NewsController
 //        echo 'actionOne'; die;
      $id = $_GET['id'];
      $item = News::getOne($id);
-     include __DIR__ . '/../views/news/one.php';
+
+        $view->assign('item', $item);
+        $view->display('news/one.php');
+//     include __DIR__ . '/../views/news/one.php';
     }
 
 }

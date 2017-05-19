@@ -21,4 +21,7 @@ class News extends AbstractModel {
     protected static $class = 'News';
 
 
+
+
+
 }
