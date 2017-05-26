@@ -14,18 +14,21 @@ class NewsController
     public function actionAll()
     {
 
-        $news = News::getAll();
-        $view = new View();
+        var_dump(
+            NewsModel::findAll()
+        );die;
+
+//        $news = News::getAll();
+//        $view = new View();
+//        $view->items = $news;
+//
+//
+//        $view->display('news/all.php');
 
 
-        $view->items = $news;
-
-
-
-        $view->display('news/all.php');
-
-//        include __DIR__ . '/../views/news/all.php';
     }
+
+
 
     public function actionOne()
     {
