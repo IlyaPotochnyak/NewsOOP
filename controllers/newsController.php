@@ -14,16 +14,10 @@ class NewsController
     public function actionAll()
     {
 
-        var_dump(
-            NewsModel::findAll()
-        );die;
-
-//        $news = News::getAll();
-//        $view = new View();
-//        $view->items = $news;
-//
-//
-//        $view->display('news/all.php');
+        $article = new NewsModel();
+        $article->title = 'Привет2';
+        $article->newText = 'Привет мир2!';
+        $article->insert();
 
 
     }

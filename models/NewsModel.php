@@ -1,13 +1,16 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: potoc
- * Date: 26.05.2017
- * Time: 17:07
+ * Class NewsModel
+ *
+ * @property $title
  */
 class NewsModel
     extends AbstractModel
 {
     protected static $table = 'news';
+
+//    public $id;
+//    public $title;
+//    public $text;
 }
