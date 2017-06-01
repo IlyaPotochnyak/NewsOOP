@@ -14,10 +14,15 @@ class NewsController
     public function actionAll()
     {
 
-        $article = new NewsModel();
-        $article->title = 'Привет2';
-        $article->newText = 'Привет мир2!';
-        $article->insert();
+        $art = NewsModel::findOneByColumn('title', 'Первая новость!!!');
+
+//        var_dump($art); die;
+        $art->title = 'Первая новость';
+
+
+//        $art->save();
+
+
 
 
     }
@@ -28,7 +33,9 @@ class NewsController
     {
 //        echo 'actionOne'; die;
      $id = $_GET['id'];
-     $item = News::getOne($id);
+//     $item = News::getOne($id);
+
+
 
         $view->assign('item', $item);
         $view->display('news/one.php');

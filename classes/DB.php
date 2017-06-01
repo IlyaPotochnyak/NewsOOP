@@ -41,6 +41,11 @@ class DB
 
     }
 
+    public function lastInsertId()
+    {
+        return $this->dbh->lastInsertId();
+    }
+
 //    public function queryAll($sql, $class = 'stdClass')
 //    {
 //        $res = mysql_query($sql);
