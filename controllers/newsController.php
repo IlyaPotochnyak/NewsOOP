@@ -14,10 +14,12 @@ class NewsController
     public function actionAll()
     {
 
-        $art = NewsModel::findOneByColumn('title', 'Первая новость!!!');
+            $art = NewsModel::findOneByColumn('title', 'Первая новость!');
+
+
 
 //        var_dump($art); die;
-        $art->title = 'Первая новость';
+//        $art->title = 'Первая новость';
 
 
 //        $art->save();

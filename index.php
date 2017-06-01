@@ -10,8 +10,17 @@ $act = isset($_GET['act']) ? $_GET['act'] : 'All';
 $controllerClassName = $ctrl . 'Controller';
 
 //require_once __DIR__ . '/controllers/' . $controllerClassName . '.php';
+try {
+    $controller = new $controllerClassName;
+    $method = 'action' . $act;
+    $controller->$method();
+}
+catch (Exception $e) {
 
-$controller = new $controllerClassName;
-$method = 'action' . $act;
+    $view = new View();
+    $view->error = $e->getMessage();
+    $view->display('error.php');
 
-$controller->$method();
+//    die('Something wrong!!! ' . $e->getMessage());
+}
+
