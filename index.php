@@ -1,6 +1,18 @@
 <?php
 
 
+
+//$content = file_get_contents(__DIR__ . '/test.json');
+//
+//$obj = json_decode($content);
+//echo $obj->foo;die();
+
+$obj = new stdClass();
+$obj->title = 'zagolovok';
+$obj->text = 'text';
+
+echo json_encode($obj); die;
+
 require_once __DIR__ . '/autoload.php';
 
 
