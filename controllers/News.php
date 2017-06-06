@@ -9,22 +9,21 @@
 
 //require_once __DIR__ . '/../models/News.php';
 
-class NewsController
+namespace Application\Controllers;
+
+use Application\Models\News as NewsModel;
+
+class News
 {
     public function actionAll()
     {
-
-            $art = NewsModel::findOneByColumn('title', 'Первая новость!');
-
+        $items = NewsModel::findAll();
 
 
-//        var_dump($art); die;
-//        $art->title = 'Первая новость';
-
-
-//        $art->save();
-
-
+        $view = new \View();
+        $view->items = $items;
+//        var_dump($view);die;
+        $view->display('news/all.php');
 
 
     }
